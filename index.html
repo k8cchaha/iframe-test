@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Embedded Tech</title>
+  <style>
+    .row-list {
+      display: flex;
+    }
+    .row-list>div, .row-list>button {
+      margin: 10px;
+    }
+    .block {
+      border: solid 1px blue;
+      padding: 10px;
+      margin-bottom: 10px
+    }
+    button {
+      font-size: 20px;
+    }
+  </style>
+  <script type="module" src="https://jacob-demo-embed.toddle.site/.toddle/custom-element/ui-card.js"></script>
+  <script type="module" src="https://framer-embed.toddle.site/.toddle/custom-element/weather-widget.js"></script>
+</head>
+<body>
+  <h1>FE Embedded Tech</h1>
+  <div class="block">
+    <h2>iframe</h2>
+    <div class="row-list">
+      <button id="btnA">更改Page A內容</button>
+      <button id="btnB">更改Page B內容</button>
+      <button id="btnC">更改Map內容</button>
+    </div>
+    <div class="row-list">
+      <div>
+        <iframe id="iframeA" src="./frame-a.html" width="300" height="300" frameborder="0"></iframe>
+      </div>
+      <div>
+        <iframe id="iframeB" src="./frame-b.html" width="300" height="300" frameborder="0"></iframe>
+      </div>
+      <div>
+        <iframe id="iframeC" src="https://www.openstreetmap.org/export/embed.html?bbox=-0.004017949104309083%2C51.47612752641776%2C0.00030577182769775396%2C51.478569861898606&layer=mapnik" width="300" height="300" frameborder="0"></iframe>
+      </div>
+    </div>
+  </div>
+  
+  <div class="block">
+    <h2>web component</h2>
+    <ui-card 
+      style="
+        width: 300px;
+        display: block;
+        --grey-200: rebeccapurple;
+      "
+      heading="This is Heading"
+      text="Test Test Test"
+    >
+    <!-- <div slot="image" style="display: flex; justify-content: center">
+      <weather-widget style="--grey-900: transparent"></weather-widget>
+    </div> -->
+  </ui-card>
+  </div>
+  <div class="main"></div>
+  <script src="./app.js"></script>
+</body>
+</html>
